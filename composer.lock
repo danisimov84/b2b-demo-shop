@@ -18802,16 +18802,16 @@
         },
         {
             "name": "spryker/code-it-now",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker/code-it-now.git",
-                "reference": "9b29d0e4d357d5252bee01d1fb06572812bac924"
+                "reference": "5b640c417967df863f1537c1336e19d50c0df3c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker/code-it-now/zipball/9b29d0e4d357d5252bee01d1fb06572812bac924",
-                "reference": "9b29d0e4d357d5252bee01d1fb06572812bac924",
+                "url": "https://api.github.com/repos/spryker/code-it-now/zipball/5b640c417967df863f1537c1336e19d50c0df3c9",
+                "reference": "5b640c417967df863f1537c1336e19d50c0df3c9",
                 "shasum": ""
             },
             "require": {
