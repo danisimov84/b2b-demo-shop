@@ -54,8 +54,8 @@ sections:
         generate-auto-completion:
             command: 'vendor/bin/console dev:ide-auto-completion:generate'
 
-        rest-api-generate-documentation:
-            command: 'vendor/bin/console rest-api:generate:documentation'
+        # rest-api-generate-documentation:
+        #     command: 'vendor/bin/console rest-api:generate:documentation'
 
     build-static:
         dependencies-install:
