@@ -84,24 +84,275 @@ regions:
                     broker:
                         namespace: de_queue
                     key_value_store:
-                        namespace: 1
+                        namespace: 51
                     search:
                         namespace: de_search
                     session:
-                        namespace: 2
+                        namespace: 52
             AT:
                 services:
                     broker:
                         namespace: at_queue
                     key_value_store:
-                        namespace: 1
+                        namespace: 53
                     search:
                         namespace: at_search
                     session:
+                        namespace: 54
+            EIN:
+                services:
+                    broker:
+                        namespace: ein_queue
+                    key_value_store:
+                        namespace: 1
+                    search:
+                        namespace: ein_search
+                    session:
                         namespace: 2
+            KMD:
+                services:
+                    broker:
+                        namespace: kmd_queue
+                    key_value_store:
+                        namespace: 3
+                    search:
+                        namespace: kmd_search
+                    session:
+                        namespace: 4
+            LPZ:
+                services:
+                    broker:
+                        namespace: lpz_queue
+                    key_value_store:
+                        namespace: 5
+                    search:
+                        namespace: lpz_search
+                    session:
+                        namespace: 6
+            HAD:
+                services:
+                    broker:
+                        namespace: had_queue
+                    key_value_store:
+                        namespace: 7
+                    search:
+                        namespace: had_search
+                    session:
+                        namespace: 8
+            ISS:
+                services:
+                    broker:
+                        namespace: iss_queue
+                    key_value_store:
+                        namespace: 9
+                    search:
+                        namespace: iss_search
+                    session:
+                        namespace: 10
+            RUE:
+                services:
+                    broker:
+                        namespace: rue_queue
+                    key_value_store:
+                        namespace: 11
+                    search:
+                        namespace: rue_search
+                    session:
+                        namespace: 12
+            WIE:
+                services:
+                    broker:
+                        namespace: wie_queue
+                    key_value_store:
+                        namespace: 13
+                    search:
+                        namespace: wie_search
+                    session:
+                        namespace: 14
+            WND:
+                services:
+                    broker:
+                        namespace: wnd_queue
+                    key_value_store:
+                        namespace: 15
+                    search:
+                        namespace: wnd_search
+                    session:
+                        namespace: 16
+
+            KRE:
+                services:
+                    broker:
+                        namespace: kre_queue
+                    key_value_store:
+                        namespace: 17
+                    search:
+                        namespace: kre_search
+                    session:
+                        namespace: 18
+            GEN:
+                services:
+                    broker:
+                        namespace: gen_queue
+                    key_value_store:
+                        namespace: 19
+                    search:
+                        namespace: gen_search
+                    session:
+                        namespace: 20
+            ESS:
+                services:
+                    broker:
+                        namespace: ess_queue
+                    key_value_store:
+                        namespace: 21
+                    search:
+                        namespace: ess_search
+                    session:
+                        namespace: 22
+            GUE:
+                services:
+                    broker:
+                        namespace: gue_queue
+                    key_value_store:
+                        namespace: 23
+                    search:
+                        namespace: gue_search
+                    session:
+                        namespace: 24
+            BSG:
+                services:
+                    broker:
+                        namespace: bsg_queue
+                    key_value_store:
+                        namespace: 25
+                    search:
+                        namespace: bsg_search
+                    session:
+                        namespace: 26
+            ESB:
+                services:
+                    broker:
+                        namespace: esb_queue
+                    key_value_store:
+                        namespace: 27
+                    search:
+                        namespace: esb_search
+                    session:
+                        namespace: 28
+            WLZ:
+                services:
+                    broker:
+                        namespace: wlz_queue
+                    key_value_store:
+                        namespace: 29
+                    search:
+                        namespace: wlz_search
+                    session:
+                        namespace: 30
+            I-O:
+                services:
+                    broker:
+                        namespace: i-o_queue
+                    key_value_store:
+                        namespace: 31
+                    search:
+                        namespace: i-o_search
+                    session:
+                        namespace: 32
+            SLS:
+                services:
+                    broker:
+                        namespace: sls_queue
+                    key_value_store:
+                        namespace: 33
+                    search:
+                        namespace: sls_search
+                    session:
+                        namespace: 34
+            GER:
+                services:
+                    broker:
+                        namespace: ger_queue
+                    key_value_store:
+                        namespace: 35
+                    search:
+                        namespace: ger_search
+                    session:
+                        namespace: 36
+            HER:
+                services:
+                    broker:
+                        namespace: her_queue
+                    key_value_store:
+                        namespace: 37
+                    search:
+                        namespace: her_search
+                    session:
+                        namespace: 38
+            LUD:
+                services:
+                    broker:
+                        namespace: lud_queue
+                    key_value_store:
+                        namespace: 39
+                    search:
+                        namespace: lud_search
+                    session:
+                        namespace: 40
+            PLT:
+                services:
+                    broker:
+                        namespace: plt_queue
+                    key_value_store:
+                        namespace: 41
+                    search:
+                        namespace: plt_search
+                    session:
+                        namespace: 42
+            ZWI:
+                services:
+                    broker:
+                        namespace: zwi_queue
+                    key_value_store:
+                        namespace: 43
+                    search:
+                        namespace: zwi_search
+                    session:
+                        namespace: 44
+            KLA:
+                services:
+                    broker:
+                        namespace: kla_queue
+                    key_value_store:
+                        namespace: 45
+                    search:
+                        namespace: kla_search
+                    session:
+                        namespace: 46
+            WIB:
+                services:
+                    broker:
+                        namespace: wib_queue
+                    key_value_store:
+                        namespace: 47
+                    search:
+                        namespace: wib_search
+                    session:
+                        namespace: 48
+            NKS:
+                services:
+                    broker:
+                        namespace: nks_queue
+                    key_value_store:
+                        namespace: 49
+                    search:
+                        namespace: nks_search
+                    session:
+                        namespace: 50
 
 groups:
-    EU:
+  EU:
         region: EU
         applications:
             Redirects:
@@ -132,9 +383,111 @@ groups:
                     backoffice.de.release54-prod.cloud.spryker.toys:
                         store: DE
                         <<: *frontend-auth
+                        primal: true
                     backoffice.at.release54-prod.cloud.spryker.toys:
                         store: AT
                         <<: *frontend-auth
+                        primal: true
+                    backoffice.ein.release54-prod.cloud.spryker.toys:
+                        store: EIN
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.kmd.release54-prod.cloud.spryker.toys:
+                        store: KMD
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.lpz.release54-prod.cloud.spryker.toys:
+                        store: LPZ
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.iss.release54-prod.cloud.spryker.toys:
+                        store: ISS
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.had.release54-prod.cloud.spryker.toys:
+                        store: HAD
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.rue.release54-prod.cloud.spryker.toys:
+                        store: RUE
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.wie.release54-prod.cloud.spryker.toys:
+                        store: WIE
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.wnd.release54-prod.cloud.spryker.toys:
+                        store: WND
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.kre.release54-prod.cloud.spryker.toys:
+                        store: KRE
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.gen.release54-prod.cloud.spryker.toys:
+                        store: GEN
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.ess.release54-prod.cloud.spryker.toys:
+                        store: ESS
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.gue.release54-prod.cloud.spryker.toys:
+                        store: GUE
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.bsg.release54-prod.cloud.spryker.toys:
+                        store: BSG
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.esb.release54-prod.cloud.spryker.toys:
+                        store: ESB
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.wlz.release54-prod.cloud.spryker.toys:
+                        store: WLZ
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.i-o.release54-prod.cloud.spryker.toys:
+                        store: I-O
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.sls.release54-prod.cloud.spryker.toys:
+                        store: SLS
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.ger.release54-prod.cloud.spryker.toys:
+                        store: GER
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.her.release54-prod.cloud.spryker.toys:
+                        store: HER
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.lud.release54-prod.cloud.spryker.toys:
+                        store: LUD
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.plt.release54-prod.cloud.spryker.toys:
+                        store: PLT
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.zwi.release54-prod.cloud.spryker.toys:
+                        store: ZWI
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.kla.release54-prod.cloud.spryker.toys:
+                        store: KLA
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.wib.release54-prod.cloud.spryker.toys:
+                        store: WIB
+                        <<: *frontend-auth
+                        primal: true
+                    backoffice.nks.release54-prod.cloud.spryker.toys:
+                        store: NKS
+                        <<: *frontend-auth
+                        primal: true
             backgw:
                 application: backend-gateway
                 endpoints:
