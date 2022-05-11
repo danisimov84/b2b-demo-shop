@@ -4,6 +4,31 @@ env:
 stores:
     - DE
     - AT
+    - EIN
+    - KMD
+    - LPZ
+    - HAD
+    - ISS
+    - RUE
+    - WIE
+    - WND
+    - KRE
+    - GEN
+    - ESS
+    - GUE
+    - BSG
+    - ESB
+    - WLZ
+    - I-O
+    - SLS
+    - GER
+    - HER
+    - LUD
+    - PLT
+    - ZWI
+    - KLA
+    - WIB
+    - NKS
 
 sections:
     scheduler-stop:
