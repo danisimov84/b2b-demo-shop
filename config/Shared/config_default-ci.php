@@ -16,8 +16,11 @@ use Spryker\Shared\Kernel\KernelConstants;
 use Spryker\Shared\Kernel\Store;
 use Spryker\Shared\Log\LogConstants;
 use Spryker\Shared\Mail\MailConstants;
+use Spryker\Shared\MessageBroker\MessageBrokerConstants;
+use Spryker\Shared\MessageBrokerAws\MessageBrokerAwsConstants;
 use Spryker\Shared\Newsletter\NewsletterConstants;
 use Spryker\Shared\OauthClient\OauthClientConstants;
+use Spryker\Shared\Product\ProductConstants;
 use Spryker\Shared\ProductManagement\ProductManagementConstants;
 use Spryker\Shared\Queue\QueueConfig;
 use Spryker\Shared\Queue\QueueConstants;
@@ -93,7 +96,7 @@ $config[KernelConstants::DOMAIN_WHITELIST] = array_merge($trustedHosts, $config[
 // ------------------------------ AUTHENTICATION ------------------------------
 // ----------------------------------------------------------------------------
 
-require 'common/config_oauth-devvm.php';
+require 'common/config_oauth.php';
 
 // ----------------------------------------------------------------------------
 // ------------------------------ SERVICES ------------------------------------
@@ -205,11 +208,11 @@ $config[SessionConstants::ZED_SESSION_COOKIE_NAME]
 
 $config[ZedRequestConstants::BASE_URL_ZED_API] = sprintf(
     'http://%s',
-    $backendGatewayHost
+    $backendGatewayHost,
 );
 $config[ZedRequestConstants::BASE_URL_SSL_ZED_API] = sprintf(
     'https://%s',
-    $backendGatewayHost
+    $backendGatewayHost,
 );
 
 // ----------------------------------------------------------------------------
@@ -218,7 +221,7 @@ $config[ZedRequestConstants::BASE_URL_SSL_ZED_API] = sprintf(
 
 $config[ApplicationConstants::BASE_URL_ZED] = sprintf(
     'http://%s',
-    $backofficeHost
+    $backofficeHost,
 );
 
 // ----------------------------------------------------------------------------
@@ -236,7 +239,7 @@ $config[ApplicationConstants::BASE_URL_YVES]
     = $config[NewsletterConstants::BASE_URL_YVES]
     = sprintf(
         'http://%s',
-        $yvesHost
+        $yvesHost,
     );
 
 // ----------------------------------------------------------------------------
@@ -246,7 +249,7 @@ $config[ApplicationConstants::BASE_URL_YVES]
 $config[GlueApplicationConstants::GLUE_APPLICATION_DOMAIN]
     = sprintf(
         'http://%s',
-        $glueHost
+        $glueHost,
     );
 
 if (class_exists(TestifyConstants::class)) {
@@ -267,3 +270,17 @@ require 'common/config_oms-development.php';
 $config[OauthClientConstants::OAUTH_PROVIDER_NAME_FOR_MESSAGE_BROKER] = OauthDummyConfig::PROVIDER_NAME;
 $config[OauthClientConstants::OAUTH_PROVIDER_NAME_FOR_PAYMENT_AUTHORIZE] = OauthDummyConfig::PROVIDER_NAME;
 $config[AppCatalogGuiConstants::OAUTH_PROVIDER_NAME] = OauthDummyConfig::PROVIDER_NAME;
+
+// ----------------------------------------------------------------------------
+// ------------------------------ MessageBroker -----------------------------------------
+// ----------------------------------------------------------------------------
+$config[MessageBrokerConstants::CHANNEL_TO_TRANSPORT_MAP] =
+$config[MessageBrokerAwsConstants::CHANNEL_TO_RECEIVER_TRANSPORT_MAP] = [
+    'payment' => 'in-memory',
+    'assets' => 'in-memory',
+    'product' => 'in-memory',
+];
+//-----------------------------------------------------------------------------
+//----------------------------------- ACP -------------------------------------
+//-----------------------------------------------------------------------------
+$config[ProductConstants::PUBLISHING_TO_MESSAGE_BROKER_ENABLED] = false;

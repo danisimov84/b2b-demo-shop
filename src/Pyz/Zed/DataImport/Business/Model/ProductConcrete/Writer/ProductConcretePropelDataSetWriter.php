@@ -25,6 +25,8 @@ class ProductConcretePropelDataSetWriter implements DataSetWriterInterface
 {
     /**
      * @uses \Spryker\Shared\ProductBundleStorage\ProductBundleStorageConfig::PRODUCT_BUNDLE_PUBLISH
+     *
+     * @var string
      */
     protected const PRODUCT_BUNDLE_PUBLISH = 'ProductBundle.product_bundle.publish.write';
 
@@ -54,7 +56,7 @@ class ProductConcretePropelDataSetWriter implements DataSetWriterInterface
 
         $this->productRepository->addProductConcrete(
             $productConcreteEntity,
-            $dataSet[static::COLUMN_ABSTRACT_SKU]
+            $dataSet[static::COLUMN_ABSTRACT_SKU],
         );
 
         $this->createOrUpdateProductConcreteLocalizedAttributesEntities($dataSet, $productConcreteEntity->getIdProduct());
@@ -86,11 +88,19 @@ class ProductConcretePropelDataSetWriter implements DataSetWriterInterface
         $productConcreteEntity = SpyProductQuery::create()
             ->filterBySku($productConcreteEntityTransfer->getSku())
             ->findOneOrCreate();
+
+        $fkProductAbstract = $productConcreteEntity->getFkProductAbstract();
+
         $productConcreteEntity->fromArray($productConcreteEntityTransfer->modifiedToArray());
 
         if ($productConcreteEntity->isNew() || $productConcreteEntity->isModified()) {
             $productConcreteEntity->save();
             DataImporterPublisher::addEvent(ProductEvents::PRODUCT_CONCRETE_PUBLISH, $productConcreteEntity->getIdProduct());
+
+            if ($fkProductAbstract !== $idAbstract) {
+                DataImporterPublisher::addEvent(ProductEvents::PRODUCT_ABSTRACT_PUBLISH, $fkProductAbstract);
+                DataImporterPublisher::addEvent(ProductEvents::PRODUCT_ABSTRACT_PUBLISH, $idAbstract);
+            }
         }
 
         return $productConcreteEntity;
@@ -135,7 +145,7 @@ class ProductConcretePropelDataSetWriter implements DataSetWriterInterface
      */
     protected function createOrUpdateProductConcreteLocalizedAttributesEntities(
         DataSetInterface $dataSet,
-        int $idProduct
+        int $idProduct,
     ): void {
         $productConcreteLocalizedTransfers = $this->getProductConcreteLocalizedTransfers($dataSet);
 
@@ -165,7 +175,7 @@ class ProductConcretePropelDataSetWriter implements DataSetWriterInterface
      */
     protected function createOrUpdateProductConcreteSearchEntities(
         int $idProduct,
-        SpyProductSearchEntityTransfer $productSearchEntityTransfer
+        SpyProductSearchEntityTransfer $productSearchEntityTransfer,
     ): void {
         $productSearchEntity = SpyProductSearchQuery::create()
             ->filterByFkProduct($idProduct)

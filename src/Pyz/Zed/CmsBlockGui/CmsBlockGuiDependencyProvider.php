@@ -10,49 +10,46 @@ namespace Pyz\Zed\CmsBlockGui;
 use Spryker\Zed\CmsBlockCategoryConnector\Communication\Plugin\CmsBlockCategoryFormPlugin;
 use Spryker\Zed\CmsBlockCategoryConnector\Communication\Plugin\CmsBlockCategoryListViewPlugin;
 use Spryker\Zed\CmsBlockGui\CmsBlockGuiDependencyProvider as CmsBlockGuiCmsBlockGuiDependencyProvider;
-use Spryker\Zed\CmsBlockProductConnector\Communication\Plugin\CmsBlockProductAbstractFormPlugin;
-use Spryker\Zed\CmsBlockProductConnector\Communication\Plugin\CmsBlockProductAbstractListViewPlugin;
 use Spryker\Zed\ContentGui\Communication\Plugin\CmsBlockGui\HtmlToTwigExpressionsCmsBlockGlossaryBeforeSavePlugin;
 use Spryker\Zed\ContentGui\Communication\Plugin\CmsBlockGui\TwigExpressionsToHtmlCmsBlockGlossaryAfterFindPlugin;
+use Spryker\Zed\Kernel\Communication\Form\FormTypeInterface;
 use Spryker\Zed\Store\Communication\Plugin\Form\StoreRelationToggleFormTypePlugin;
 
 class CmsBlockGuiDependencyProvider extends CmsBlockGuiCmsBlockGuiDependencyProvider
 {
     /**
-     * @return array
+     * @return array<\Spryker\Zed\CmsBlockGui\Communication\Plugin\CmsBlockFormPluginInterface>
      */
-    protected function getCmsBlockFormPlugins()
+    protected function getCmsBlockFormPlugins(): array
     {
         $plugins = parent::getCmsBlockFormPlugins();
         $plugins = array_merge($plugins, [
             new CmsBlockCategoryFormPlugin(),
-            new CmsBlockProductAbstractFormPlugin(),
         ]);
 
         return $plugins;
     }
 
     /**
-     * @return array
+     * @return array<\Spryker\Zed\CmsBlockGui\Communication\Plugin\CmsBlockViewPluginInterface>
      */
-    protected function getCmsBlockViewPlugins()
+    protected function getCmsBlockViewPlugins(): array
     {
         return array_merge(parent::getCmsBlockViewPlugins(), [
             new CmsBlockCategoryListViewPlugin(),
-            new CmsBlockProductAbstractListViewPlugin(),
         ]);
     }
 
     /**
      * @return \Spryker\Zed\Kernel\Communication\Form\FormTypeInterface
      */
-    protected function getStoreRelationFormTypePlugin()
+    protected function getStoreRelationFormTypePlugin(): FormTypeInterface
     {
         return new StoreRelationToggleFormTypePlugin();
     }
 
     /**
-     * @return \Spryker\Zed\CmsBlockGuiExtension\Dependency\Plugin\CmsBlockGlossaryAfterFindPluginInterface[]
+     * @return array<\Spryker\Zed\CmsBlockGuiExtension\Dependency\Plugin\CmsBlockGlossaryAfterFindPluginInterface>
      */
     protected function getCmsBlockGlossaryAfterFindPlugins(): array
     {
@@ -62,7 +59,7 @@ class CmsBlockGuiDependencyProvider extends CmsBlockGuiCmsBlockGuiDependencyProv
     }
 
     /**
-     * @return \Spryker\Zed\CmsBlockGuiExtension\Dependency\Plugin\CmsBlockGlossaryBeforeSavePluginInterface[]
+     * @return array<\Spryker\Zed\CmsBlockGuiExtension\Dependency\Plugin\CmsBlockGlossaryBeforeSavePluginInterface>
      */
     protected function getCmsBlockGlossaryBeforeSavePlugins(): array
     {

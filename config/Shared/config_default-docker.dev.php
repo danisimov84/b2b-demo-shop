@@ -14,6 +14,8 @@ use Spryker\Shared\Event\EventConstants;
 use Spryker\Shared\GlueApplication\GlueApplicationConstants;
 use Spryker\Shared\Kernel\KernelConstants;
 use Spryker\Shared\Log\LogConstants;
+use Spryker\Shared\MessageBroker\MessageBrokerConstants;
+use Spryker\Shared\MessageBrokerAws\MessageBrokerAwsConstants;
 use Spryker\Shared\Newsletter\NewsletterConstants;
 use Spryker\Shared\OauthClient\OauthClientConstants;
 use Spryker\Shared\ProductManagement\ProductManagementConstants;
@@ -26,6 +28,7 @@ use Spryker\Shared\Session\SessionConstants;
 use Spryker\Shared\Testify\TestifyConstants;
 use Spryker\Shared\WebProfiler\WebProfilerConstants;
 use Spryker\Shared\ZedRequest\ZedRequestConstants;
+use Spryker\Zed\MessageBrokerAws\MessageBrokerAwsConfig;
 use Spryker\Zed\OauthDummy\OauthDummyConfig;
 use SprykerShop\Shared\CalculationPage\CalculationPageConstants;
 use SprykerShop\Shared\ErrorPage\ErrorPageConstants;
@@ -109,7 +112,7 @@ if (!getenv('SPRYKER_SSL_ENABLE')) {
     $config[ApplicationConstants::BASE_URL_ZED] = sprintf(
         'http://%s%s',
         getenv('SPRYKER_BE_HOST'),
-        $backofficePort !== 80 ? ':' . $backofficePort : ''
+        $backofficePort !== 80 ? ':' . $backofficePort : '',
     );
 
 // ----------------------------------------------------------------------------
@@ -125,7 +128,7 @@ if (!getenv('SPRYKER_SSL_ENABLE')) {
         = sprintf(
             'http://%s%s',
             $yvesHost,
-            $yvesPort !== 80 ? ':' . $yvesPort : ''
+            $yvesPort !== 80 ? ':' . $yvesPort : '',
         );
 
 // ----------------------------------------------------------------------------
@@ -137,7 +140,7 @@ if (!getenv('SPRYKER_SSL_ENABLE')) {
     $config[GlueApplicationConstants::GLUE_APPLICATION_DOMAIN] = sprintf(
         'http://%s%s',
         $glueHost,
-        $gluePort !== 80 ? ':' . $gluePort : ''
+        $gluePort !== 80 ? ':' . $gluePort : '',
     );
 
     if (class_exists(TestifyConstants::class, true)) {
@@ -157,3 +160,15 @@ require 'common/config_oms-development.php';
 $config[OauthClientConstants::OAUTH_PROVIDER_NAME_FOR_MESSAGE_BROKER] = OauthDummyConfig::PROVIDER_NAME;
 $config[OauthClientConstants::OAUTH_PROVIDER_NAME_FOR_PAYMENT_AUTHORIZE] = OauthDummyConfig::PROVIDER_NAME;
 $config[AppCatalogGuiConstants::OAUTH_PROVIDER_NAME] = OauthDummyConfig::PROVIDER_NAME;
+
+// ----------------------------------------------------------------------------
+// ------------------------------ MessageBroker -----------------------------------------
+// ----------------------------------------------------------------------------
+$messageBrokerTransport = getenv('SPRYKER_TESTING_ENABLED') ? 'in-memory' : MessageBrokerAwsConfig::SQS_TRANSPORT;
+
+$config[MessageBrokerConstants::CHANNEL_TO_TRANSPORT_MAP] =
+$config[MessageBrokerAwsConstants::CHANNEL_TO_RECEIVER_TRANSPORT_MAP] = [
+    'payment' => $messageBrokerTransport,
+    'assets' => $messageBrokerTransport,
+    'product' => $messageBrokerTransport,
+];

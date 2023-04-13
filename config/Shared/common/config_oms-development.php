@@ -29,7 +29,6 @@ $config[KernelConstants::DEPENDENCY_INJECTOR_ZED] = [
 $config[OmsConstants::ACTIVE_PROCESSES] = array_merge([
     'DummyPayment01',
     'Nopayment01',
-    'B2CStateMachine01',
 ], $config[OmsConstants::ACTIVE_PROCESSES]);
 
 $config[SalesConstants::PAYMENT_METHOD_STATEMACHINE_MAPPING] = array_replace(
@@ -38,5 +37,5 @@ $config[SalesConstants::PAYMENT_METHOD_STATEMACHINE_MAPPING] = array_replace(
         DummyPaymentConfig::PAYMENT_METHOD_INVOICE => 'DummyPayment01',
         DummyPaymentConfig::PAYMENT_METHOD_CREDIT_CARD => 'DummyPayment01',
         NopaymentConfig::PAYMENT_PROVIDER_NAME => 'Nopayment01',
-    ]
+    ],
 );

@@ -1,8 +1,7 @@
 # Spryker B2B Demo Shop
 [![Build Status](https://github.com/spryker-shop/b2b-demo-shop/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/spryker-shop/b2b-demo-shop/actions?query=branch:master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spryker-shop/b2b-demo-shop/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spryker-shop/b2b-demo-shop/?branch=master)
-[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg)](https://php.net/)
-
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%208.0-8892BF.svg)](https://php.net/)
 
 ## Description
 
@@ -134,7 +133,7 @@ You've set up your Spryker B2B Demo Shop and can access your applications.
 
 This section describes the most common issues related to the installation of the B2B Demo Shop.
 
-For a complete troubleshooting, see [Troubleshooting Spryker in Docker issues](https://docs.spryker.com/docs/troubleshooting-spryker-in-docker-issues) or [Troubleshooting Spryker in Vagrant installation issues](https://docs.spryker.com/docs/troubleshooting-spryker-in-vagrant-installation-issues).
+For a complete troubleshooting, see [Troubleshooting Spryker in Docker issues](https://docs.spryker.com/docs/troubleshooting-spryker-in-docker-issues).
 
 **when**
 
@@ -175,11 +174,6 @@ docker/sdk up --build --assets --data
 ## Installation of B2B Demo Shop with Docker
 
 For detailed installation instructions of Spryker with Docker, see [Installing Spryker with Docker](https://docs.spryker.com/docs/scos/dev/setup/installing-spryker-with-docker/installing-spryker-with-docker.html).
-
-## Installation of B2B Demo Shop with Vagrant
-
-For detailed installation instructions of Spryker with DevVM, see [Installing with Development Virtual Machine](https://docs.spryker.com/docs/scos/dev/developer-getting-started-guide.html#installing-spryker-with-development-virtual-machine).
-
 
 ## Glue API reference
 

@@ -1,7 +1,8 @@
 # IDEs
-/.idea
-/.project
-/nbproject
+.idea/
+.project/
+.vscode/
+nbproject/
 /.buildpath
 /.settings
 *.sublime-*
@@ -31,9 +32,7 @@ config/accumulated-config.json
 /src/Generated/
 /vendor/
 FOSS.md
-/public/Yves/maintenance/maintenance.marker
-/public/Zed/maintenance/maintenance.marker
-/public/Backoffice/maintenance/maintenance.marker
+/public/*/maintenance/maintenance.marker
 
 /data/*
 !/data/import/
@@ -48,13 +47,8 @@ config/Yves/cache_bust.php
 /node_modules/
 
 # public stuff
-public/Yves/assets/
-public/Zed/assets/
-public/Backoffice/assets/
-
-# vagrant stuff
-.vagrant
-Vagrantfile
+/public/*/assets/
+/public/*/dist/
 
 # docker stuff
 /docker/
@@ -96,3 +90,4 @@ composer.phar
 c3.php
 .phpstorm.meta.php
 .githook_local
+/architecture-baseline.json

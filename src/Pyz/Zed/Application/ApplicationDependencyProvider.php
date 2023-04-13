@@ -25,6 +25,7 @@ use Spryker\Zed\Session\Communication\Plugin\Application\MockArraySessionApplica
 use Spryker\Zed\Session\Communication\Plugin\Application\SessionApplicationPlugin;
 use Spryker\Zed\Translator\Communication\Plugin\Application\TranslatorApplicationPlugin;
 use Spryker\Zed\Twig\Communication\Plugin\Application\TwigApplicationPlugin;
+use Spryker\Zed\UtilNumber\Communication\Plugin\Application\NumberFormatterApplicationPlugin;
 use Spryker\Zed\Validator\Communication\Plugin\Application\ValidatorApplicationPlugin;
 use Spryker\Zed\WebProfiler\Communication\Plugin\Application\WebProfilerApplicationPlugin;
 
@@ -33,7 +34,7 @@ class ApplicationDependencyProvider extends SprykerApplicationDependencyProvider
     /**
      * @deprecated Use {@link \Pyz\Zed\Application\ApplicationDependencyProvider::getBackofficeApplicationPlugins()} instead.
      *
-     * @return \Spryker\Shared\ApplicationExtension\Dependency\Plugin\ApplicationPluginInterface[]
+     * @return array<\Spryker\Shared\ApplicationExtension\Dependency\Plugin\ApplicationPluginInterface>
      */
     protected function getApplicationPlugins(): array
     {
@@ -41,7 +42,7 @@ class ApplicationDependencyProvider extends SprykerApplicationDependencyProvider
     }
 
     /**
-     * @return \Spryker\Shared\ApplicationExtension\Dependency\Plugin\ApplicationPluginInterface[]
+     * @return array<\Spryker\Shared\ApplicationExtension\Dependency\Plugin\ApplicationPluginInterface>
      */
     protected function getBackofficeApplicationPlugins(): array
     {
@@ -59,6 +60,7 @@ class ApplicationDependencyProvider extends SprykerApplicationDependencyProvider
             new FormApplicationPlugin(),
             new ValidatorApplicationPlugin(),
             new SecurityApplicationPlugin(),
+            new NumberFormatterApplicationPlugin(),
         ];
 
         if (class_exists(WebProfilerApplicationPlugin::class)) {
@@ -69,7 +71,7 @@ class ApplicationDependencyProvider extends SprykerApplicationDependencyProvider
     }
 
     /**
-     * @return \Spryker\Shared\ApplicationExtension\Dependency\Plugin\ApplicationPluginInterface[]
+     * @return array<\Spryker\Shared\ApplicationExtension\Dependency\Plugin\ApplicationPluginInterface>
      */
     protected function getBackendGatewayApplicationPlugins(): array
     {
@@ -85,7 +87,7 @@ class ApplicationDependencyProvider extends SprykerApplicationDependencyProvider
     }
 
     /**
-     * @return \Spryker\Shared\ApplicationExtension\Dependency\Plugin\ApplicationPluginInterface[]
+     * @return array<\Spryker\Shared\ApplicationExtension\Dependency\Plugin\ApplicationPluginInterface>
      */
     protected function getBackendApiApplicationPlugins(): array
     {

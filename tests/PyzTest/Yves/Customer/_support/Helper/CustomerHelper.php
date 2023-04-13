@@ -9,7 +9,7 @@ namespace PyzTest\Yves\Customer\Helper;
 
 use Codeception\Module;
 use Codeception\Module\WebDriver;
-use Codeception\Util\Stub;
+use Codeception\Stub;
 use Generated\Shared\DataBuilder\CustomerBuilder;
 use Generated\Shared\Transfer\CustomerTransfer;
 use Generated\Shared\Transfer\NewsletterSubscriberTransfer;
@@ -43,9 +43,9 @@ class CustomerHelper extends Module
     /**
      * @param string $email
      *
-     * @return \Orm\Zed\Customer\Persistence\SpyCustomer
+     * @return \Orm\Zed\Customer\Persistence\SpyCustomer|null
      */
-    public function loadCustomerByEmail($email): SpyCustomer
+    public function loadCustomerByEmail($email): ?SpyCustomer
     {
         $customerQuery = new SpyCustomerQuery();
         $customerEntity = $customerQuery->findOneByEmail($email);

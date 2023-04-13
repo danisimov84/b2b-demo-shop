@@ -7,8 +7,9 @@
 
 namespace Pyz\Zed\ProductOption;
 
+use Spryker\Zed\Kernel\Communication\Form\FormTypeInterface;
 use Spryker\Zed\Kernel\Container;
-use Spryker\Zed\Money\Communication\Plugin\Form\MoneyCollectionFormTypePlugin;
+use Spryker\Zed\MoneyGui\Communication\Plugin\Form\MoneyCollectionFormTypePlugin;
 use Spryker\Zed\ProductOption\ProductOptionDependencyProvider as SprykerProductOptionDependencyProvider;
 use Spryker\Zed\ShoppingListProductOptionConnector\Communication\Plugin\ProductOption\ShoppingListItemsProductOptionValuesPreRemovePlugin;
 
@@ -19,13 +20,13 @@ class ProductOptionDependencyProvider extends SprykerProductOptionDependencyProv
      *
      * @return \Spryker\Zed\Kernel\Communication\Form\FormTypeInterface
      */
-    protected function createMoneyCollectionFormTypePlugin(Container $container)
+    protected function createMoneyCollectionFormTypePlugin(Container $container): FormTypeInterface
     {
         return new MoneyCollectionFormTypePlugin();
     }
 
     /**
-     * @return \Spryker\Zed\ProductOptionExtension\Dependency\Plugin\ProductOptionValuesPreRemovePluginInterface[]
+     * @return array<\Spryker\Zed\ProductOptionExtension\Dependency\Plugin\ProductOptionValuesPreRemovePluginInterface>
      */
     protected function getProductOptionValuesPreRemovePlugins(): array
     {

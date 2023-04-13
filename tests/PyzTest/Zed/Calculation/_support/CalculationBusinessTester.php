@@ -93,7 +93,7 @@ class CalculationBusinessTester extends Actor
         $discountEntity->setDisplayName('test1' . $this->getIncrementNumber());
         $discountEntity->setIsActive(1);
         $discountEntity->setValidFrom(new DateTime('1985-07-01'));
-        $discountEntity->setValidTo(new DateTime('2050-07-01'));
+        $discountEntity->setValidTo(new DateTime('2037-07-01'));
         $discountEntity->setCalculatorPlugin($calculatorType);
         $discountEntity->setCollectorQueryString('sku = "' . $sku . '"');
 
@@ -152,7 +152,7 @@ class CalculationBusinessTester extends Actor
      */
     public function createCalculationFacade(array $calculatorPlugins = []): CalculationFacade
     {
-        if (empty($calculatorPlugins)) {
+        if (!$calculatorPlugins) {
             return new CalculationFacade();
         }
 
@@ -189,7 +189,7 @@ class CalculationBusinessTester extends Actor
     }
 
     /**
-     * @param \Generated\Shared\Transfer\ItemTransfer[] $items
+     * @param array<\Generated\Shared\Transfer\ItemTransfer> $items
      * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
      *
      * @return \Generated\Shared\Transfer\QuoteTransfer
@@ -210,7 +210,7 @@ class CalculationBusinessTester extends Actor
                 new RefundableAmountCalculatorPlugin(),
                 new RefundTotalCalculatorPlugin(),
                 new GrandTotalCalculatorPlugin(),
-            ]
+            ],
         );
 
         return $calculationFacade->recalculateQuote($quoteTransfer);
