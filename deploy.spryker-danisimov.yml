@@ -117,49 +117,49 @@ groups:
                 at.danisimov.cloud.spryker.toys:
                     store: AT
                     redirect:
-                        code: 302
+                        type: 302
                         url: www.at.danisimov.cloud.spryker.toys
-            yves:
-                application: yves
-                endpoints:
-                    www.de.danisimov.cloud.spryker.toys:
-                        store: DE
-                        <<: *frontend-auth
-                    www.at.danisimov.cloud.spryker.toys:
-                        store: AT
-                        <<: *frontend-auth
-            boffice:
-                application: backoffice
-                endpoints:
-                    backoffice.de.danisimov.cloud.spryker.toys:
-                        store: DE
-                        <<: *frontend-auth
-                    backoffice.at.danisimov.cloud.spryker.toys:
-                        store: AT
-                        <<: *frontend-auth
-            backgw:
-                application: backend-gateway
-                endpoints:
-                    backend-gateway.de.danisimov.cloud.spryker.toys:
-                        store: DE
-                    backend-gateway.at.danisimov.cloud.spryker.toys:
-                        store: AT
-            backapi:
-                application: zed
-                endpoints:
-                    backend-api.de.danisimov.cloud.spryker.toys:
-                        store: DE
-                        entry-point: BackendApi
-                    backend-api.at.danisimov.cloud.spryker.toys:
-                        store: AT
-                        entry-point: BackendApi
-            glue:
-                application: glue
-                endpoints:
-                    glue.de.danisimov.cloud.spryker.toys:
-                        store: DE
-                    glue.at.danisimov.cloud.spryker.toys:
-                        store: AT
+        yves:
+            application: yves
+            endpoints:
+                www.de.danisimov.cloud.spryker.toys:
+                    store: DE
+                    <<: *frontend-auth
+                www.at.danisimov.cloud.spryker.toys:
+                    store: AT
+                    <<: *frontend-auth
+        boffice:
+            application: backoffice
+            endpoints:
+                backoffice.de.danisimov.cloud.spryker.toys:
+                    store: DE
+                    <<: *frontend-auth
+                backoffice.at.danisimov.cloud.spryker.toys:
+                    store: AT
+                    <<: *frontend-auth
+        backgw:
+            application: backend-gateway
+            endpoints:
+                backend-gateway.de.danisimov.cloud.spryker.toys:
+                    store: DE
+                backend-gateway.at.danisimov.cloud.spryker.toys:
+                    store: AT
+        backapi:
+            application: zed
+            endpoints:
+                backend-api.de.danisimov.cloud.spryker.toys:
+                    store: DE
+                    entry-point: BackendApi
+                backend-api.at.danisimov.cloud.spryker.toys:
+                    store: AT
+                    entry-point: BackendApi
+        glue:
+            application: glue
+            endpoints:
+                glue.de.danisimov.cloud.spryker.toys:
+                    store: DE
+                glue.at.danisimov.cloud.spryker.toys:
+                    store: AT
 
 services:
   database:
