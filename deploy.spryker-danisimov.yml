@@ -107,18 +107,18 @@ groups:
     region: EU
     applications:
         Redirects:
-        application: static
-        endpoints:
-            de.danisimov.cloud.spryker.toys:
-                store: DE
-                redirect:
-                    type: 302
-                    url: www.de.danisimov.cloud.spryker.toys
-            at.danisimov.cloud.spryker.toys:
-                store: AT
-                redirect:
-                    code: 302
-                    url: www.at.danisimov.cloud.spryker.toys
+            application: static
+            endpoints:
+                de.danisimov.cloud.spryker.toys:
+                    store: DE
+                    redirect:
+                        type: 302
+                        url: www.de.danisimov.cloud.spryker.toys
+                at.danisimov.cloud.spryker.toys:
+                    store: AT
+                    redirect:
+                        code: 302
+                        url: www.at.danisimov.cloud.spryker.toys
             yves:
                 application: yves
                 endpoints:
